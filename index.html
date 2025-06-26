@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Servicios notariales de confianza y profesionalismo en Notaría Pública 4." />
+  <title>Notaría Pública 4</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --color-primario: #1b2a41;
+      --color-secundario: #e0e4eb;
+      --color-acento: #1f66ad;
+      --color-acento-sec: #264a7d;
+      --fuente-titulos: 'Libre Baskerville', serif;
+      --fuente-texto: 'Open Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--fuente-texto);
+      background: linear-gradient(to bottom right, #f2f4f8, #e8ecf1);
+      color: #333;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    header {
+      background-color: var(--color-primario);
+      color: #fff;
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .logo-titulo {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* centra el conjunto en el header */
+      gap: 20px;
+    }
+
+    .logo-titulo img {
+      width: 80px;
+      height: auto;
+    }
+
+    .logo-titulo h1 {
+      font-family: var(--fuente-titulos);
+      font-size: 36px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      display: inline-flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: var(--color-acento);
+      transform: scale(1.05);
+    }
+
+    /* Sección Bienvenidos con imagen de fondo */
+    #inicio {
+      position: relative;
+      background: url('ntt3.jpg') center center / cover no-repeat;
+      padding: 120px 0;
+      color: white;
+    }
+
+    #inicio::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    #inicio .container {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 50px 30px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    #inicio h2 {
+      font-family: var(--fuente-titulos);
+      font-size: 36px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+      margin-bottom: 20px;
+    }
+
+    #inicio p {
+      font-size: 18px;
+      color: #f0f0f0;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    }
+
+    h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 4px;
+      background: var(--color-acento);
+      margin: 10px auto;
+      border-radius: 2px;
+    }
+
+    /* Servicios */
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .servicio {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .servicio:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .servicio h3 {
+      font-size: 22px;
+      color: var(--color-primario);
+      margin-bottom: 10px;
+    }
+
+    .servicio p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .servicio a {
+      display: inline-block;
+      padding: 12px 25px;
+      background: linear-gradient(to right, var(--color-acento), var(--color-acento-sec));
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .servicio a:hover {
+      background: linear-gradient(to right, #153a64, #264a7d);
+      transform: scale(1.05);
+    }
+
+    /* Otros servicios */
+    #mas-servicios {
+      margin-bottom: 60px;
+    }
+
+    ul.mas-servicios {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    ul.mas-servicios li {
+      margin: 10px 0;
+    }
+
+    ul.mas-servicios li a {
+      color: var(--color-primario);
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    ul.mas-servicios li a:hover {
+      color: var(--color-acento);
+    }
+
+    /* Contacto */
+    #contacto {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    #contacto a {
+      color: var(--color-primario);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 18px;
+    }
+
+    #contacto a:hover {
+      color: var(--color-acento);
+    }
+
+    /* Ubicación */
+    #ubicacion iframe {
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: var(--color-primario);
+      color: #fff;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .logo-titulo {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .servicios-grid {
+        grid-template-columns: 1fr;
+      }
+      ul.mas-servicios li a {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-titulo">
+        <img src="ntp1.jpg" alt="Logo Notaría" />
+        <h1>Notaría Pública 4</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#mas-servicios">Otros Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#ubicacion">Ubicación</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <div class="container">
+        <h2>Bienvenidos</h2>
+        <p>La Notaría Pública 4 ofrece servicios legales con profesionalismo, ética y compromiso. Estamos para servirle con transparencia y confianza.</p>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <div class="container">
+        <h2>Servicios Notariales</h2>
+        <div class="servicios-grid">
+          <div class="servicio">
+            <h3>Protocolización de Asambleas de Ejidos</h3>
+            <p>Legalización de decisiones ejidales conforme a la normatividad vigente.</p>
+            <a href="protocolizacion.html">Más información</a>
+          </div>
+          <div class="servicio">
+            <h3>Asociaciones Civiles</h3>
+            <p>Redacción y registro de actas constitutivas, estatutos y trámites ante la autoridad.</p>
+            <a href="sociedades.html">Más información</a>
+          </div>
+          <div class="servicio">
+            <h3>Poderes Notariales</h3>
+            <p>Elaboración de poderes generales, especiales y revocaciones legales.</p>
+            <a href="poderes.html">Más información</a>
+          </div>
+          <div class="servicio">
+            <h3>Testamentos</h3>
+            <p>Asesoría personalizada para testamentos públicos abiertos o cerrados.</p>
+            <a href="testamentos.html">Más información</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="mas-servicios">
+      <div class="container">
+        <h2>Otros Servicios</h2>
+        <ul class="mas-servicios">
+          <li><a href="compraventa.html">Compraventa de Inmuebles</a></li>
+          <li><a href="hipotecas.html">Constitución de Hipotecas</a></li>
+          <li><a href="sociedades mercantiles.html">Constitución de Sociedades Mercantiles</a></li>
+          <li><a href="procedimientos sucesorios.html">Procedimientos Sucesorios</a></li>
+          <li><a href="actas notariales.html">Actas Notariales</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="container">
+        <h2>Contacto</h2>
+        <p>Email: <a href="mailto:jjgg_4@hotmail.com">jjgg_4@hotmail.com</a></p>
+        <p>Teléfono: <a href="tel:+524121570568">412 15 70568</a></p>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <div class="container">
+        <h2>Ubicación</h2>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3731.766706882146!2d-100.76417812554442!3d20.719695980853537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842ca84e1930cd39%3A0xd28e720073f7da91!2sNotaria%204!5e0!3m2!1ses-419!2smx!4v1750220586685!5m2!1ses-419!2smx" 
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Notaría Pública 4. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
